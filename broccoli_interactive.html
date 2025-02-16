@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broccoli the Brave Pup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .interactive {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c8b2c;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Broccoli the Brave Pup</h1>
+        <h2 id="page-title">Meet Broccoli</h2>
+        <img id="page-image" src="brocc - frame at 0m1s.jpg" alt="Broccoli the Dog">
+        <p id="page-text">Once upon a time, in the town of Barksville, there was a tough and loyal dog named Broccoli. He had sharp green eyes, a golden collar, and a heart full of courage. But there was just one problem—Broccoli <strong>hated</strong> broccoli! "Yuck! No way!" he would say every time someone tried to give him a piece.</p>
+        <p class="interactive" onclick="nextPage()">Tap to continue...</p>
+    </div>
+
+    <script>
+        let page = 1;
+        const pages = [
+            {
+                title: "Meet Broccoli",
+                image: "brocc - frame at 0m1s.jpg",
+                text: "Once upon a time, in the town of Barksville, there was a tough and loyal dog named Broccoli. But there was just one problem—Broccoli <strong>hated</strong> broccoli!",
+            },
+            {
+                title: "The Healthy Contest",
+                image: "broccoli_challenge.jpg",
+                text: "One day, the town announced the Great Barksville Challenge! But to win, you had to eat vegetables every day. 'I can't do that!' Broccoli groaned.",
+            },
+            {
+                title: "A Visit to Dr. Paws",
+                image: "broccoli_paws.jpg",
+                text: "Broccoli’s best friend, Dr. Paws, told him: 'Healthy food makes you strong and fast!' Maybe Broccoli could try just one bite...",
+            },
+            {
+                title: "The First Bite",
+                image: "broccoli_first_bite.jpg",
+                text: "That night, Broccoli took a small bite of... well, broccoli. 'Bleh!' But wait—it wasn’t that bad!",
+            },
+            {
+                title: "Getting Stronger",
+                image: "broccoli_training.jpg",
+                text: "Day by day, Broccoli ate veggies: carrots, spinach, and even broccoli! He felt faster and stronger than ever before!",
+            },
+            {
+                title: "The Big Challenge",
+                image: "broccoli_champion.jpg",
+                text: "The day of the challenge arrived. Broccoli raced, leaped, and solved puzzles faster than any other pup. 'Go, Broccoli, go!' the crowd cheered.",
+            },
+            {
+                title: "A New Favorite",
+                image: "broccoli_victory.jpg",
+                text: "Broccoli stood proudly on the podium. A bowl of fresh veggies was placed before him. He wagged his tail and took a big bite of his favorite one—broccoli!",
+            }
+        ];
+
+        function nextPage() {
+            if (page < pages.length) {
+                document.getElementById("page-title").textContent = pages[page].title;
+                document.getElementById("page-image").src = pages[page].image;
+                document.getElementById("page-text").innerHTML = pages[page].text;
+                page++;
+            } else {
+                document.getElementById("page-text").innerHTML = "<strong>The End! 🎉🥦🐶</strong>";
+                document.querySelector(".interactive").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
